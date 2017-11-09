@@ -18,6 +18,34 @@
   <title></title>
 </head>
 <body>
+  <header role="banner" class="mar-t-5 pad-t-2 pad-b-4 wrap-float bg-white">
+    <div class="center wrap-float">
+      <nav class="clearfix mar-b-1">
+        <ul class="no-bullets no-margin no-padding right">
+          <% if logged_in? %>
+              <li class="pipe-separate t-light-green left">
+                <div id="hello">
+                  <a href="/users/<%= current_user.id %>" ><%= "Hello, #{current_user.username}" %></a>
+                </div>
+              </li>
+              <li class="pipe-separate t-light-green left" >
+              <div id="logout">
+                <form action="/sessions" method="POST" >
+                  <input type="hidden" name="_method" value="DELETE" >
+                  <input type="submit" value="logout" id="logout-button">
+                </form>
+              </div>
+            </li>
+          <% else %>
+            <li class="pipe-separate t-light-green left"><a href="/users/new" >register</a></li>
+            <li class="pipe-separate t-light-green left"><a href="/sessions/new" >login</a></li>
+          <% end %>
+          <li class="pipe-separate t-light-green left"><a href="/">home</a></li>
+        </ul>
+      </nav>
+    </div>
+    <h1>LOLoverflow</h1>
+  </header>
   <%= yield %>
 </body>
 </html>
