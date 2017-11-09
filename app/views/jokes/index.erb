@@ -1,3 +1,7 @@
-<% @jokes.each do |joke| %>
-  <a href="/jokes/<%= joke.id %>"><%= joke.joke %></a>
+<center><h1> LOLOverflow </h1></center>
+
+<ul>
+  <% @jokes.each do |joke| %>
+ <li> <a href="/jokes/<%= joke.id %>"><%= joke.joke %></a> </li>
 <% end %>
+</ul>
