@@ -5,4 +5,6 @@ class Joke < ApplicationRecord
   belongs_to :user
   has_many :comments, as: :commentable
 
+  validates :joke, :punchline, presence: true
+
 end
