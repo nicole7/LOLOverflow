@@ -1,0 +1,7 @@
+<h3> Hi, <%=@user.username %> </h3>
+
+<h2> Your Jokes: </h2>
+
+<% current_user.jokes.each do |joke| %>
+  <a href="/jokes/<%= joke.id %>"><%= joke.joke %></a>
+<% end %>
