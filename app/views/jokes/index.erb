@@ -1,7 +1,40 @@
 <center><h1> LOLOverflow </h1></center>
+<div class="list-of-jokes">
+  <ul>
+    <% @jokes.each do |joke| %>
 
-<ul>
-  <% @jokes.each do |joke| %>
- <li> <a href="/jokes/<%= joke.id %>"><%= joke.joke %></a> </li>
-<% end %>
-</ul>
+      <li><div class="joke-container">
+        <div class="stats inline">
+
+          <div class="votes inline">
+            <div><span title="votes"><%= joke.votes.count %></span></div>
+            <div>votes</div>
+          </div>
+
+          <div class="answers inline">
+            <div><span title="answers"><%= joke.answers.count %></span></div>
+            <div>answers</div>
+          </div>
+
+          <div class="views inline">
+            <div><span title="views"><%= joke.view_count %></span></div>
+            <div>views</div>
+          </div>
+
+        </div>
+
+          <div class="summary inline">
+            <a href="/jokes/<%= joke.id %>"><%= joke.joke %></a>
+            <br>
+          </div>
+
+      </div></li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+
+
+
