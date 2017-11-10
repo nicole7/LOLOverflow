@@ -1,7 +1,6 @@
 get '/jokes' do
-  @jokes = Joke.all
-  @jokes = @jokes.sort_by { |joke| joke.created_at }
-  erb :'jokes/index'
+  	@jokes = Joke.all.order(created_at: :desc)
+  	erb :'jokes/index'
 end
 
 get '/jokes/new' do
