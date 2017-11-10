@@ -15,7 +15,6 @@
   padding: 0;
 }
 
-
 .joke-heading {
   display: inline-block
 }
@@ -40,22 +39,33 @@ li {
   list-style: none;
 }
 
-.tiny {
-  width: 30%;
-}
-
-#home-button {
-  margin: auto;
-  width: 20%;
-  padding-top: 20px;
-}
-
-nav {
-  padding-top: 20px;
-}
 
 /*#nav CSS
 */
+/*#home-button {
+  margin: auto;
+  width: 20%;
+  padding-top: 20px;
+}*/
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+h1 {
+  margin: 0;
+  margin-right: 350px;
+  width: 20%;
+  padding-top: 15px;
+}
+
+nav {
+  padding-top: 30px;
+  padding-right: 40px;
+
+}
+
 .no-bullets {
   list-style-type: none;
 }
@@ -103,17 +113,19 @@ nav {
   text-decoration: underline;
 }
 
-#logout {
-  width: 10px;
-  padding: 0;
-}
+
+
+
+
 
 .joke-container {
   display: flex;
   align-items: center;
 }
-
-.joke-link {
+.posted-by {
+  font-style: italic;
+  font-size: 85%;
+  color: #2e4b77;
 }
 
 .joke-container-show {
