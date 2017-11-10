@@ -1,5 +1,5 @@
 get '/jokes' do
-  	@jokes = Joke.all
+  	@jokes = Joke.all.order(created_at: :desc)
   	erb :'jokes/index'
 end
 

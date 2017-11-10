@@ -1,56 +1,95 @@
+<!-- <div class="joke-container">
+	<section class="joke-section">
+		<div class="joke-heading">
+			<a href="/jokes/<%= @joke.id %>/votes?route=new" >UP</a>
+			<br/>
+			<%= @joke.vote_tally %>
+			<br/>
+			<a href="/jokes/<%= @joke.id %>/votes?route=delete" >DOWN</a>
+			<p>votes</p>
+		</div>
+		<div class="joke-body">
+			<h3><%= @joke.joke %></h3>
+		<div>
+		<div class="joke-heading-punchline">
+			<%= @joke.punchline %>
+		</div>
+		<div>
+			<label>comment:</label>
+			<form action="/comments" method="POST">
+				<textarea> </textarea>
+				<input type="submit" value="submit" >
+			</form>
+		<div>
+	</section>
 
-<section>
-	<div class="joke-heading">
-		<a href="/jokes/<%= @joke.id %>/votes?route=new" >UP</a>
-		<br/>
-		<%= @joke.vote_tally %>
-		<br/>
-		<a href="/jokes/<%= @joke.id %>/votes?route=delete" >DOWN</a>
-		<p>votes</p>
-	</div>
-	<div class="joke-heading">
-		<h3><%= @joke.joke %></h3>
-	<div>
-	<div class="joke-heading-punchline">
-		<%= @joke.punchline %>
-	</div>
-	<div>
-		<label>comment:</label>
-		<form action="/comments" method="POST">
-			<textarea> </textarea>
-			<input type="submit" value="submit" >
-		</form>
-	<div>
-</section>
-
-<section>
-	<h4>answers</h4>
-	<ul>
-		<% @joke.answers.each do |answer| %>
-			<li>
-			<div>
-				<div class="answer-votes-heading">
-				<a href="/answers/<%= answer.id %>/votes?route=new" >UP</a>
-				<br/>	
-					<%= answer.vote_tally %>
-				<br/>
-				<a href="/answers/<%= answer.id %>/votes?route=delete" >DOWN</a>
-				<br/>
-				</div>
-				<div class="answer-heading">
-					<%= answer.description_text %>
-				</div>
+	<section>
+		<h4>answers</h4>
+		<ul>
+			<% @joke.answers.each do |answer| %>
+				<li>
 				<div>
-					<label>comment:</label>		
-					<form action="/comments" method="POST">
-						<textarea> </textarea>
-						<input type="submit" value="submit" >
-					</form>
+					<div class="answer-votes-heading">
+					<a href="/answers/<%= answer.id %>/votes?route=new" >UP</a>
+					<br/>
+						<%= answer.vote_tally %>
+					<br/>
+					<a href="/answers/<%= answer.id %>/votes?route=delete" >DOWN</a>
+					<br/>
+					</div>
+					<div class="answer-heading">
+						<%= answer.description_text %>
+					</div>
+					<div>
+						<label>comment:</label>
+						<form action="/comments" method="POST">
+							<textarea> </textarea>
+							<input type="submit" value="submit" >
+						</form>
+					</div>
 				</div>
-			</div>
-			</li>
-		<% end %>	
-	</ul>
-</section>
+				</li>
+			<% end %>
+		</ul>
+	</section>
+</div>
 
 
+
+ -->
+
+
+
+
+<div class="joke-container">
+  <ul>
+
+        <div class="stats inline">
+
+          <div class="votes inline">
+          	<a href="/jokes/<%= @joke.id %>/votes?route=new" ><center>UP</center></a>
+						<br/>
+            <div><span title="votes"><center><%= @joke.vote_tally %></center></span></div>
+						<br/>
+						<a href="/jokes/<%= @joke.id %>/votes?route=delete" ><center>DOWN</center></a>
+          </div>
+
+          <div class="answers inline">
+            <div><span title="answers"><center><%= @joke.answers.count %></center></span></div>
+            <div>answers</div>
+          </div>
+
+          <div class="views inline">
+            <div><span title="views"><center><%= @joke.view_count %></center></span></div>
+            <div>views</div>
+          </div>
+
+        </div>
+
+          <div class="summary inline">
+            <span><h3><center><%= @joke.joke %></center></h3></span>
+            <br>
+          </div>
+
+  </ul>
+</div>
