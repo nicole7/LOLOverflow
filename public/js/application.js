@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   $(".joke-stuff").on("click", "#click-to-comment-post", function(event) {
     event.preventDefault();
-    
+
     $("#comment-on-post").show();
   });
 
@@ -17,8 +17,21 @@ $(document).ready(function() {
 
   $(".answer-form").on( "submit", function(event) {
     event.preventDefault();
-    
+
     $(".joke-heading-punchline").show();
+  });
+
+
+  $('.see-answers-form').on('click', function(event){
+    event.preventDefault();
+    var $form = $(this);
+    var url = $form.attr("action");
+
+    $.ajax({
+      url: url
+    }).done(function(response){
+      $('.see-answers').append(response);
+    });
   });
 
 
