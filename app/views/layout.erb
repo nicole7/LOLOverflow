@@ -30,11 +30,12 @@
               </li>
               <li class="pipe-separate t-light-green left inline tiny" >
               <div id="logout">
-                <form action="/sessions" method="POST" >
+                <form action="/sessions" method="POST">
                   <input type="hidden" name="_method" value="DELETE" >
                   <input type="submit" value="logout" id="logout-button">
                 </form>
               </div>
+              <li class="pipe-separate t-light-green left"><a href="/jokes/new">post a joke</a></li>
             </li>
           <% else %>
             <li class="pipe-separate t-light-green left"><a href="/users/new" >sign up</a></li>
