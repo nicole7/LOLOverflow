@@ -7,3 +7,17 @@
 th {
   text-align: left;
 }
+
+.joke-heading {
+	display: inline-block
+}
+
+.answer-heading {
+	display: inline-block;
+	
+}
+
+.answer-votes-heading {
+	display: inline-block;
+	min-width: 105px;	
+}
