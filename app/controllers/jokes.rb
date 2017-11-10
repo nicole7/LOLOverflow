@@ -1,6 +1,6 @@
 get '/jokes' do
-  @jokes = Joke.all
-  erb :'jokes/index'
+  	@jokes = Joke.all
+  	erb :'jokes/index'
 end
 
 get '/jokes/new' do
@@ -23,4 +23,5 @@ get '/jokes/:id' do
 
   erb :"jokes/show"
 end
+
 

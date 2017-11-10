@@ -11,6 +11,20 @@
   display: inline-block;
 }
 
+.joke-heading {
+	display: inline-block
+}
+
+.answer-heading {
+	display: inline-block;
+	
+}
+
+.answer-votes-heading {
+	display: inline-block;
+	min-width: 105px;	
+}
+
 .stats {
   width: 24%;
 }
@@ -37,8 +51,7 @@ nav {
   padding-top: 20px;
 }
 
-
-
+#nav CSS
 
 .no-bullets {
   list-style-type: none;
@@ -63,7 +76,6 @@ nav {
 .right {
   float: right;
 }
-
 
 .pipe-separate {
   padding-left: 1em;
@@ -92,10 +104,4 @@ nav {
   width: 10px;
   padding: 0;
 }
-
-
-
-
-
-
 
