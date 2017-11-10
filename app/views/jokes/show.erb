@@ -44,7 +44,7 @@
 	<h4>answers</h4>
 	<div class="add-answer" >
 		<label>write an answer(reveal the punchline!):</label>		
-		<form action="/jokes/<%= @joke.id %>/answers" method="POST">
+		<form action="/jokes/<%= @joke.id %>/answers" method="POST" class="answer-form">
 			<textarea name="description_text"></textarea>
 			<input type="submit" value="submit" >
 		</form>
