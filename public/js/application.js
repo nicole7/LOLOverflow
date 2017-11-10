@@ -13,5 +13,4 @@ $(document).ready(function() {
   $("#comment-on-answer").show();
 
   });
-
 });

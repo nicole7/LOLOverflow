@@ -1,3 +1,8 @@
+<% if @errors %>
+	<% @errors.each do |error| %>
+		<%= error %>
+	<% end %> 
+<% end %>
 
 <section>
 	<div class="joke-heading">
@@ -19,15 +24,31 @@
 	</div>
 	<div id="comment-on-post">
 		<label>comment:</label>
-		<form action="/comments" method="POST">
-			<textarea> </textarea>
+		<form action="/jokes/<%= @joke.id %>/comments" method="POST">
+			<textarea name="description_text"> </textarea>
 			<input type="submit" value="submit" >
 		</form>
-	<div>
+	</div>
+	<div class="joke-comments" >
+		<% if @joke.comments.length > 0 %>
+			<ul>
+			<% @joke.comments.each do |comment| %>
+				<li><%= comment.description_text %></li>
+			<% end %>	
+			</ul>
+		<% end %>  
+	</div>
 </section>
 
 <section>
 	<h4>answers</h4>
+	<div class="add-answer" >
+		<label>write an answer(reveal the punchline!):</label>		
+		<form action="/jokes/<%= @joke.id %>/answers" method="POST">
+			<textarea name="description_text"></textarea>
+			<input type="submit" value="submit" >
+		</form>
+	</div>
 	<ul>
 		<% @joke.answers.each do |answer| %>
 
@@ -59,12 +80,21 @@
 					<button id="click-to-comment-answer" type="button">Add a Comment</button>
 				</div>
 				<div id="comment-on-answer">
-					<label>comment:</label>
-					<form action="/comments" method="POST">
-						<textarea> </textarea>
+					<label>comment:</label>		
+					<form action="/answers/<%= answer.id %>/comments" method="POST">
+						<textarea name="description_text"></textarea>
 						<input type="submit" value="submit" >
 					</form>
 				</div>
+				<div class="answer-comments" >
+					<% if answer.comments.length > 0 %>
+						<ul>
+						<% answer.comments.each do |comment| %>
+							<li><%= comment.description_text %></li>
+						<% end %>	
+						</ul>
+					<% end %>  
+				</div>				
 			</div>
 			</li>
 		<% end %>
