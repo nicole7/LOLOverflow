@@ -20,6 +20,9 @@
 		<%= @joke.punchline %>
 	</div>
 	<div>
+		<button id="click-to-comment-post" type="button">Add a Comment</button>
+	</div>
+	<div id="comment-on-post">
 		<label>comment:</label>
 		<form action="/jokes/<%= @joke.id %>/comments" method="POST">
 			<textarea name="description_text"> </textarea>
@@ -48,11 +51,15 @@
 	</div>
 	<ul>
 		<% @joke.answers.each do |answer| %>
+
+		<% if @joke.best_answer_id == answer.id %>
+      		<br><br><i aria-hidden="true" value=&#128514></i> <span id="bestanswer">Best Punchline!</span>
+    	<% end %>
 			<li>
 			<div>
 				<div class="answer-votes-heading">
 				<a href="/answers/<%= answer.id %>/votes?route=new" >UP</a>
-				<br/>	
+				<br/>
 					<%= answer.vote_tally %>
 				<br/>
 				<a href="/answers/<%= answer.id %>/votes?route=delete" >DOWN</a>
@@ -61,7 +68,18 @@
 				<div class="answer-heading">
 					<%= answer.description_text %>
 				</div>
+
+	<% if poster? %>
+  		<form action="/answers" method="post">
+    	<input type="hidden" name="answer_id" value="<%= answer.id %>"/>
+    	<input type="hidden" name="joke_id" value="<%= @joke.id %>"/>
+    	<input type="submit" value="Best Punchline?">
+  		</form>
+	<% end %>
 				<div>
+					<button id="click-to-comment-answer" type="button">Add a Comment</button>
+				</div>
+				<div id="comment-on-answer">
 					<label>comment:</label>		
 					<form action="/answers/<%= answer.id %>/comments" method="POST">
 						<textarea name="description_text"></textarea>
@@ -79,7 +97,7 @@
 				</div>				
 			</div>
 			</li>
-		<% end %>	
+		<% end %>
 	</ul>
 </section>
 
