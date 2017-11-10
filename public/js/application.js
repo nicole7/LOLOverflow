@@ -1,19 +1,18 @@
 $(document).ready(function() {
   $("#comment-on-post").hide();
-  $("#comment-on-answer").hide();
+  $(".comment-on-answer").hide();
   $(".joke-heading-punchline").hide();
 
 
-  $("#click-to-comment-post").on("click", function(event) {
+  $(".joke-stuff").on("click", "#click-to-comment-post", function(event) {
     event.preventDefault();
     
     $("#comment-on-post").show();
   });
 
-  $("#click-to-comment-answer").on("click", function(event) {
+  $(".answer-stuff").on("click", "#click-to-comment-answer", function(event) {
     event.preventDefault();
-    
-    $("#comment-on-answer").show();
+    $(this).siblings(".comment-on-answer").show();
   });
 
   $(".answer-form").on( "submit", function(event) {
