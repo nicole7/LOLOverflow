@@ -1,7 +1,17 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $("#comment-on-post").hide();
+  $("#comment-on-answer").hide();
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $("#click-to-comment-post").on("click", function(event) {
+    event.preventDefault();
+  $("#comment-on-post").show();
+
+  });
+
+  $("#click-to-comment-answer").on("click", function(event) {
+    event.preventDefault();
+  $("#comment-on-answer").show();
+
+  });
+
 });
