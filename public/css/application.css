@@ -121,6 +121,10 @@ nav {
   width: 30%;
 }
 */
+.joke-ul {
+  display: flex;
+  align-items: center;
+}
 
 .votes {
   margin-right: 10px;
@@ -168,5 +172,7 @@ nav {
 .summary-show {
   width: 60%;
   display: flex;
+  margin: auto;
+  padding: 20px;
 }
 
