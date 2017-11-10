@@ -8,13 +8,13 @@ get '/users/:id' do
 end
 
 post '/users' do
-	@user = User.new(params[:user])
-	if @user.save
-		session[:user_id] = @user.id
-		redirect '/jokes'
-	else
-		@errors = @user.errors.full_messages
-		erb :'/users/new'
-	end
+  @user = User.new(params[:user])
+  if @user.save
+    session[:user_id] = @user.id
+    redirect '/jokes'
+  else
+    @errors = @user.errors.full_messages
+    erb :'/users/new'
+  end
 
 end

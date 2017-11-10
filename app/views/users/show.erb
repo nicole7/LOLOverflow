@@ -1,9 +1,16 @@
 <h3> Hi, <%=@user.username %> </h3>
 
-<h2> You created <%= @user.jokes.count %> Jokes: </h2>
+<% if current_user.jokes.count > 1 %>
+  <h2> You created <%= @user.jokes.count %> Jokes: </h2>
+<% elsif current_user.jokes.count == 1 %>
+  <h2> You created <%= @user.jokes.count %> Joke: </h2>
+<% else %>
+  <h2> You created <%= @user.jokes.count %> Jokes: </h2>
+<% end %>
 
 <% current_user.jokes.each do |joke| %>
-  <p>Joke</p>
+
+  <p>Your Joke: </p>
   <a href="/jokes/<%= joke.id %>"><%= joke.joke %></a>
   <p>Punchline: <%=joke.punchline%>
   <p>Vote tally: <%=joke.vote_tally%>  |  View Count: <%=joke.view_count%> </p>
@@ -11,7 +18,15 @@
   <p>Best answer</p>
     <%= joke.best_answer.description_text%>
   <% end %>
+  <div class="see-answers">
+    <form class="see-answers-form" action="/jokes/<%= joke.id %>/answers" method="get">
+      <button type="submit">See all answers</button>
+    </form>
+  </div>
 <% end %>
+
+
+
 
 
 
