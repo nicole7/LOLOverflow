@@ -17,6 +17,23 @@ $(document).ready(function() {
 
   $(".answer-form").on( "submit", function(event) {
     event.preventDefault();
+    var $form = $(this);
+
+    var url = $form.attr("action");
+    var data = $form.serialize();
+    var method = $form.attr("method");
+
+    var ajaxRequest = $.ajax( {
+      url: url,
+      method: method,
+      data: data
+    })
+
+    ajaxRequest.done( function(response) {
+      $(".appear-answer").prepend(response);
+      $(".appear-answer .comment-on-answer").hide();
+    });
+
 
     $(".joke-heading-punchline").show();
   });

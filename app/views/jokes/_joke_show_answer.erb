@@ -1,0 +1,45 @@
+
+    <% if joke.best_answer_id == answer.id %>
+          <br><br><i aria-hidden="true" value=&#128514></i> <span id="bestanswer">Best Punchline!</span>
+      <% end %>
+      <li>
+      <div>
+        <div class="answer-votes-heading">
+        <a href="/answers/<%= answer.id %>/votes?route=new" >UP</a>
+        <br/>
+          <%= answer.vote_tally %>
+        <br/>
+        <a href="/answers/<%= answer.id %>/votes?route=delete" >DOWN</a>
+        <br/>
+        </div>
+        <div class="answer-heading">
+          <%= answer.description_text %>
+        </div>
+
+  <% if poster? %>
+      <form action="/answers/<%= answer.id %>" method="post">
+        <input type="hidden" name="_method" value="put">
+        <input type="submit" value="Best Punchline?">
+      </form>
+  <% end %>
+        <div id="click-to-comment-answer">
+          <button  type="button">Add a Comment</button>
+        </div>
+        <div class="comment-on-answer">
+          <label>comment:</label>
+          <form action="/answers/<%= answer.id %>/comments" method="POST">
+            <textarea name="description_text"></textarea>
+            <input type="submit" value="submit" >
+          </form>
+        </div>
+        <div class="answer-comments" >
+          <% if answer.comments.length > 0 %>
+            <ul>
+            <% answer.comments.each do |comment| %>
+              <li><%= comment.description_text %></li>
+            <% end %>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+      </li>
