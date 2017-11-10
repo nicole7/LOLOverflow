@@ -20,5 +20,9 @@ helpers do
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
+  def poster?
+    current_user == @joke.user
+  end
+
 
 end
