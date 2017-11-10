@@ -1,45 +1,39 @@
-
-
 .jokes-li {
   border-bottom: 1px solid #b7c0ce;
   padding-bottom: 10px;
   padding-top: 10px;
   margin: auto;
-  /*width: 70%;*/
   list-style: none;
 }
-
-/*.inline {
-  display: inline-block;
-}*/
 
 .list-of-jokes {
   width: 70%;
   margin: auto;
 }
 
+.list-of-jokes ul {
+  padding: 0;
+}
+
+
 .joke-heading {
-	display: inline-block
+  display: inline-block
 }
 
 .answer-heading {
-	display: inline-block;
+  display: inline-block;
 }
 
 .answer-votes-heading {
-	display: inline-block;
-	min-width: 105px;
+  display: inline-block;
+  min-width: 105px;
 }
 
 .stats {
-  width: 18%;
+  max-width: 200px;
   display: flex;
   align-items: center;
-}
-
-.summary {
-  width: 60%;
-  display: flex;
+  margin-right: 20px;
 }
 
 li {
@@ -117,27 +111,18 @@ nav {
 .joke-container {
   display: flex;
   align-items: center;
-  margin: auto;
+}
+
+.joke-link {
 }
 
 .joke-container-show {
-  /*margin: auto;*/
   width: 70%;
   display: flex;
   align-items: center;
   margin: auto;
 }
 
-/*.joke-heading {
-  margin: auto;
-  width: 30%;
-}
-
-.joke-body {
-  margin: auto;
-  width: 30%;
-}
-*/
 .joke-ul {
   display: flex;
   align-items: center;
@@ -191,7 +176,6 @@ nav {
   width: 60%;
   display: flex;
   margin: auto;
-  /*padding: 20px;*/
 }
 
 .stats-show {

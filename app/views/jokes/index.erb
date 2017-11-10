@@ -24,7 +24,7 @@
         </div>
 
           <div class="summary">
-            <a class="joke-link" href="/jokes/<%= joke.id %>"><%= joke.joke %></a>
+            <div class="joke-link"><a href="/jokes/<%= joke.id %>"><%= joke.joke %></a></div><div><span class="posted-by">posted by <%= joke.user.username %></span></div>
           </div>
 
       </div>
