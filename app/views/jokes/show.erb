@@ -4,7 +4,7 @@
 	<% end %>
 <% end %>
 
-<section>
+<section class="joke-stuff">
 	<div class="joke-heading">
 		<a href="/jokes/<%= @joke.id %>/votes?route=new" >UP</a>
 		<br/>
@@ -19,8 +19,8 @@
 	<div class="joke-heading-punchline">
 		<%= @joke.punchline %>
 	</div>
-	<div>
-		<button id="click-to-comment-post" type="button">Add a Comment</button>
+	<div id="click-to-comment-post">
+		<button type="button">Add a Comment</button>
 	</div>
 	<div id="comment-on-post">
 		<label>comment:</label>
@@ -40,7 +40,7 @@
 	</div>
 </section>
 
-<section>
+<section class="answer-stuff">
 	<h4>answers</h4>
 	<div class="add-answer" >
 		<label>write an answer(reveal the punchline!):</label>
@@ -75,10 +75,10 @@
     		<input type="submit" value="Best Punchline?">
   		</form>
 	<% end %>
-				<div>
-					<button id="click-to-comment-answer" type="button">Add a Comment</button>
+				<div id="click-to-comment-answer">
+					<button  type="button">Add a Comment</button>
 				</div>
-				<div id="comment-on-answer">
+				<div class="comment-on-answer">
 					<label>comment:</label>
 					<form action="/answers/<%= answer.id %>/comments" method="POST">
 						<textarea name="description_text"></textarea>
