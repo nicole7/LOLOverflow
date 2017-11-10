@@ -2,32 +2,33 @@
   <ul>
     <% @jokes.each do |joke| %>
 
-      <li class="jokes-li"><div>
-        <div class="stats inline">
+      <li class="jokes-li">
+        <div class="joke-container">
+        <div class="stats">
 
-          <div class="votes inline">
+          <div class="votes">
             <div><span title="votes"><center><%= joke.votes.count %></center></span></div>
             <div class="num-top-padding">votes</div>
           </div>
 
-          <div class="answers inline">
+          <div class="answers">
             <div><span title="answers"><center><%= joke.answers.count %></center></span></div>
             <div class="num-top-padding">answers</div>
           </div>
 
-          <div class="views inline">
+          <div class="views">
             <div><span title="views"><center><%= joke.view_count %></center></span></div>
             <div class="num-top-padding">views</div>
           </div>
 
         </div>
 
-          <div class="summary inline">
-            <a href="/jokes/<%= joke.id %>"><%= joke.joke %></a>
-            <br>
+          <div class="summary">
+            <a class="joke-link" href="/jokes/<%= joke.id %>"><%= joke.joke %></a>
           </div>
 
-      </div></li>
+      </div>
+    </li>
     <% end %>
   </ul>
 </div>
