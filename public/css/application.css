@@ -1,11 +1,14 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+.jokes-li {
+  border-bottom: 1px solid #e4e6e8;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin: auto;
+  width: 70%;
+  list-style: none;
 }
-th {
-  text-align: left;
+
+.inline {
+  display: inline-block;
 }
 
 .joke-heading {
@@ -21,3 +24,84 @@ th {
 	display: inline-block;
 	min-width: 105px;	
 }
+
+.stats {
+  width: 24%;
+}
+
+.summary {
+  width: 60%;
+}
+
+li {
+  list-style: none;
+}
+
+.tiny {
+  width: 30%;
+}
+
+#home-button {
+  margin: auto;
+  width: 20%;
+  padding-top: 20px;
+}
+
+nav {
+  padding-top: 20px;
+}
+
+#nav CSS
+
+.no-bullets {
+  list-style-type: none;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-outline {
+  outline: none;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.pipe-separate {
+  padding-left: 1em;
+  padding-right: 1em;
+  border-right: 1px solid;
+}
+
+.pipe-separate:first-of-type {
+  padding-left: 0;
+}
+
+  .pipe-separate:last-of-type {
+    padding-right: 0;
+    border-right: none;
+  }
+
+#logout-button {
+  padding: 0px;
+  margin: 0px;
+  border:  none;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#logout {
+  width: 10px;
+  padding: 0;
+}
+

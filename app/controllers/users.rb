@@ -7,7 +7,7 @@ get '/users/:id' do
   erb :'users/show'
 end
 
-post '/users' do 
+post '/users' do
 	@user = User.new(params[:user])
 	if @user.save
 		session[:user_id] = @user.id
@@ -16,4 +16,5 @@ post '/users' do
 		@errors = @user.errors.full_messages
 		erb :'/users/new'
 	end
+
 end
