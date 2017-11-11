@@ -15,7 +15,6 @@
   padding: 0;
 }
 
-
 .joke-heading {
   display: inline-block
 }
@@ -40,22 +39,33 @@ li {
   list-style: none;
 }
 
-.tiny {
-  width: 30%;
-}
-
-#home-button {
-  margin: auto;
-  width: 20%;
-  padding-top: 20px;
-}
-
-nav {
-  padding-top: 20px;
-}
 
 /*#nav CSS
 */
+/*#home-button {
+  margin: auto;
+  width: 20%;
+  padding-top: 20px;
+}*/
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+h1 {
+  margin: 0;
+  margin-right: 350px;
+  width: 20%;
+  padding-top: 15px;
+}
+
+nav {
+  padding-top: 30px;
+  padding-right: 40px;
+
+}
+
 .no-bullets {
   list-style-type: none;
 }
@@ -95,7 +105,7 @@ nav {
     border-right: none;
   }
 
-#logout-button {
+#button {
   padding: 0px;
   margin: 0px;
   border:  none;
@@ -103,9 +113,9 @@ nav {
   text-decoration: underline;
 }
 
-#logout {
-  width: 10px;
-  padding: 0;
+.joke-show-all-content{
+  width: 70%;
+  margin: auto;
 }
 
 .joke-container {
@@ -113,14 +123,35 @@ nav {
   align-items: center;
 }
 
-.joke-link {
+.posted-by {
+  font-style: italic;
+  font-size: 85%;
+  color: #2e4b77;
 }
 
 .joke-container-show {
+  /*width: 70%;*/
+  display: flex;
+  align-items: center;
+  margin: auto;
+  border-bottom: 1px solid #b7c0ce;
+}
+
+.answer-container-show {
   width: 70%;
   display: flex;
   align-items: center;
   margin: auto;
+  border-bottom: 1px solid #b7c0ce;
+}
+
+.answer-form {
+padding-top: 4px;
+}
+
+.joke-comment {
+  padding-top: 10px;
+  border-bottom: 1px solid #b7c0ce;
 }
 
 .joke-ul {
@@ -181,4 +212,10 @@ nav {
 .stats-show {
   display: flex;
   align-items: center;
+}
+
+.answer-summary {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
