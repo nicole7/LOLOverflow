@@ -1,3 +1,9 @@
+html {
+  background-image: url("../../media/subtle_white_feathers.png");
+  /*background-color: #cccccc;*/
+}
+
+
 .jokes-li {
   border-bottom: 1px solid #b7c0ce;
   padding-bottom: 10px;
@@ -58,12 +64,18 @@ h1 {
   margin-right: 350px;
   width: 20%;
   padding-top: 15px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 5.5em;
 }
 
 nav {
   padding-top: 30px;
   padding-right: 40px;
+  font-family: 'PT Sans Caption', sans-serif;
+}
 
+body {
+  font-family: 'PT Sans Caption', sans-serif;
 }
 
 .no-bullets {

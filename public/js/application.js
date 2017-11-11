@@ -10,7 +10,7 @@ $(document).ready(function() {
     $("#comment-on-post").show();
   });
 
-  $(".answer-stuff").on("click", "#click-to-comment-answer", function(event) {
+  $(".answer-stuff").on("click", ".click-to-comment-answer", function(event) {
     event.preventDefault();
     $(this).find(".comment-on-answer").show();
   });
@@ -27,7 +27,7 @@ $(document).ready(function() {
       url: url,
       method: method,
       data: data
-    })
+    });
 
     ajaxRequest.done( function(response) {
       $(".appear-answer").prepend(response);
