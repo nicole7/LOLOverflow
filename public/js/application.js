@@ -31,9 +31,9 @@ $(document).ready(function() {
 
     ajaxRequest.done( function(response) {
       $(".appear-answer").prepend(response);
+      $("#answer-form-text-area").val("");
       $(".appear-answer .comment-on-answer").hide();
     });
-
 
     $(".joke-heading-punchline").show();
   });
@@ -51,5 +51,33 @@ $(document).ready(function() {
     });
   });
 
+//up-vote
+$(".fa-arrow-circle-up").on("click", function(event) {
+  event.preventDefault();
+
+  var $link = $(this);
+  var url = $link.closest("a").attr("href");
+
+
+  $.ajax({
+    url: url
+  }).done( function(response) {
+    $(".display-vote-tally").text(response.tally);
+  });
+});
+
+//down-vote
+$('.fa-arrow-circle-down').on('click', function(event){
+    event.preventDefault();
+
+    var $link = $(this);
+    var url = $link.closest('a').attr('href');
+
+    $.ajax({
+      url: url
+    }).done(function(response){
+      $('.display-vote-tally').text(response.tally);
+    });
+});
 
 });
