@@ -25,6 +25,10 @@ html {
   display: inline-block
 }
 
+.joke-heading-punchline{
+  padding-top: 10px;
+}
+
 .answer-heading {
   display: inline-block;
 }

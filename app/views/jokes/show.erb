@@ -22,24 +22,18 @@
             <div><span title="answers"><center><%= @joke.answers.count %></center></span> answers</div>
           </div>
 
-
-
           <div class="views-show">
             <div><span title="views"><center><%= @joke.view_count %></center></span> views</div>
           </div>
 
-          <!-- </div> -->
-
           <div class="summary-show joke-heading">
             <span><h3><%= @joke.joke %></h3></span>
             <br>
-          <div class="joke-heading-punchline">
-            <%= @joke.punchline %>
-        </div>
-
       </ul>
     </div>
-
+          <div class="joke-heading-punchline">
+            <h2><%= @joke.punchline %></h2>
+          </div>
 
     <div class="joke-comment">
         <div id="click-to-comment-post">

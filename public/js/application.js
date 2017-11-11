@@ -12,6 +12,8 @@ $(document).ready(function() {
 
   $(".answer-stuff").on("click", ".click-to-comment-answer", function(event) {
     event.preventDefault();
+    console.log("clicking on the Add a Comment button");
+    console.log($(this).find(".comment-on-answer"));
     $(this).find(".comment-on-answer").show();
   });
 
