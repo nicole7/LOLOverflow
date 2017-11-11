@@ -65,6 +65,8 @@ $(".fa-arrow-circle-up").on("click", function(event) {
     url: url
   }).done( function(response) {
     $(".display-vote-tally").text(response.tally);
+    $link.css("color", "#7f4f15");
+    $link.closest('.stats-show').find('.fa-arrow-circle-down').css("color", "#3f5884");
   });
 });
 
@@ -79,6 +81,8 @@ $('.fa-arrow-circle-down').on('click', function(event){
       url: url
     }).done(function(response){
       $('.display-vote-tally').text(response.tally);
+      $link.css("color", "#7f4f15");
+      $link.closest('.stats-show').find('.fa-arrow-circle-up').css("color", "#3f5884");
     });
 });
 

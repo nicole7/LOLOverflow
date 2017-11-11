@@ -54,7 +54,7 @@
           <% if @joke.comments.length > 0 %>
             <ul>
             <% @joke.comments.each do |comment| %>
-              <li><%= comment.description_text %></li>
+              <li class="comment-text"><%= comment.description_text %> <div><span class="posted-by">posted by <%= comment.user.username %> at <%= comment.created_at %></span></div></li>
             <% end %>
             </ul>
           <% end %>
