@@ -1,56 +1,8 @@
 <ul>
   <% @joke.answers.each do |answer| %>
 
-  <% if @joke.best_answer_id == answer.id %>
-    <br><br><i aria-hidden="true" value=&#128514></i> <span id="bestanswer">&#x1f602;</span>
-  <% end %>
+  <%= erb :'jokes/_joke_show_answer', locals: {joke: @joke, answer: answer} %>
 
-  <li>
-    <div class="answer-summary">
-      <div class="votes-show joke-heading answer-votes-heading">
-        <a href="/answers/<%= answer.id %>/votes?route=new" ><center><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></center></a>
-        <br/>
-        <div><span title="votes"><center><%= answer.vote_tally %></center></span></div>
-        <br/>
-        <a href="/answers/<%= answer.id %>/votes?route=delete" ><center><i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i></center></a>
-      </div>
-
-      <div class="answer-heading">
-        <%= answer.description_text %>
-      </div>
-    </div>
-
-  <% if poster? %>
-    <form action="/answers/<%= answer.id %>" method="post">
-      <input type="hidden" name="_method" value="put">
-      <input class="submit-button" type="submit" value="Best Punchline">
-    </form>
-  <% end %>
-    <div class="click-to-comment-answer">
-      <form>
-        <a href="#">Add a Comment</a>
-        <input id="button">
-      </form>
-    </div>
-
-    <div class="comment-on-answer">
-      <label>Comment:</label>
-      <form action="/answers/<%= answer.id %>/comments" method="POST"  class="comment-form">
-        <textarea name="description_text"></textarea>
-        <input class="submit-button" type="submit" value="submit" >
-      </form>
-    </div>
-
-    <div class="answer-comments" >
-      <% if answer.comments.length > 0 %>
-        <ul>
-        <% answer.comments.each do |comment| %>
-          <li><%= comment.description_text %></li>
-        </ul>
-        <% end %>
-      <% end %>
-    </div>
-  </li>
   <% end %>
 </ul>
 
