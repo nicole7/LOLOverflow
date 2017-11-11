@@ -12,7 +12,7 @@ $(document).ready(function() {
 
   $(".answer-stuff").on("click", "#click-to-comment-answer", function(event) {
     event.preventDefault();
-    $(this).siblings(".comment-on-answer").show();
+    $(this).find(".comment-on-answer").show();
   });
 
   $(".answer-form").on( "submit", function(event) {
