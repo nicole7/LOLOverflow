@@ -218,4 +218,10 @@ padding-top: 4px;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b7c0ce;
+}
+
+#comment-on-post {
+  padding-top: 10px;
 }

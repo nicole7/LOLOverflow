@@ -9,31 +9,34 @@
     <div class="joke-container-show">
       <ul class="joke-ul">
 
-            <div class="stats-show">
+        <div class="stats-show">
+          <div class="votes-show joke-heading">
+          	<a href="/jokes/<%= @joke.id %>/votes?route=new" ><center><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></center></a>
+  					<br/>
+            <div><center><span class="display-vote-tally" title="votes"><%= @joke.vote_tally %></span></center></div>
+  					<br/>
+  					<a href="/jokes/<%= @joke.id %>/votes?route=delete" ><center><i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i></center></a>
+          </div>
 
-              <div class="votes-show joke-heading">
-              	<a href="/jokes/<%= @joke.id %>/votes?route=new" ><center><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></center></a>
-    						<br/>
-                <div><span title="votes"><center><%= @joke.vote_tally %></center></span></div>
-    						<br/>
-    						<a href="/jokes/<%= @joke.id %>/votes?route=delete" ><center><i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i></center></a>
-              </div>
+          <div class="answers-show">
+            <div><span title="answers"><center><%= @joke.answers.count %></center></span> answers</div>
+          </div>
 
-              <div class="answers-show">
-                <div><span title="answers"><center><%= @joke.answers.count %></center></span> answers</div>
-              </div>
 
-              <div class="views-show">
-                <div><span title="views"><center><%= @joke.view_count %></center></span> views</div>
-              </div>
-            </div>
 
-              <div class="summary-show joke-heading">
-                <span><h3><%= @joke.joke %></h3></span>
-                <br>
-              <div class="joke-heading-punchline">
-                <%= @joke.punchline %>
-              </div>
+          <div class="views-show">
+            <div><span title="views"><center><%= @joke.view_count %></center></span> views</div>
+          </div>
+
+          <!-- </div> -->
+
+          <div class="summary-show joke-heading">
+            <span><h3><%= @joke.joke %></h3></span>
+            <br>
+          <div class="joke-heading-punchline">
+            <%= @joke.punchline %>
+        </div>
+
       </ul>
     </div>
 
@@ -79,12 +82,10 @@
         <div class="show-answers">
         <div class="appear-answer">
         </div>
+        <h1>PARTIAL++++++++++++++++++++++</h1>
           <%= erb :'/jokes/_joke_show_answers', locals: { joke: @joke } %>
+        <h1>PARTIAL++++++++++++++++++++++</h1>
         </div>
-
 
     </section>
   </div>
-
-</section>
-</div>

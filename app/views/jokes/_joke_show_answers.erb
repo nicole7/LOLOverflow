@@ -2,7 +2,7 @@
   <% @joke.answers.each do |answer| %>
 
   <% if @joke.best_answer_id == answer.id %>
-        <br><br><i aria-hidden="true" value=&#128514></i> <span id="bestanswer">Best Punchline!</span>
+        <br><br><i aria-hidden="true" value=&#128514></i> <span id="bestanswer">&#x1f602;</span>
     <% end %>
     <li>
 
@@ -20,31 +20,33 @@
       </div>
     </div>
 
-<% if poster? %>
-    <form action="/answers/<%= answer.id %>" method="post">
-      <input type="hidden" name="_method" value="put">
-      <input type="submit" value="Best Punchline?">
-    </form>
-<% end %>
-      <div id="click-to-comment-answer">
-        <form>
-          <a href="#">Add a Comment</a>
-          <input id="button">
-        </form>
-      </div>
-      <div class="comment-on-answer">
-        <label>comment:</label>
-        <form action="/answers/<%= answer.id %>/comments" method="POST">
-          <textarea name="description_text"></textarea>
-          <input type="submit" value="submit" >
-        </form>
-      </div>
-      <div class="answer-comments" >
-        <% if answer.comments.length > 0 %>
-          <ul>
-          <% answer.comments.each do |comment| %>
-            <li><%= comment.description_text %></li>
-          <% end %>
+  <% if poster? %>
+      <form action="/answers/<%= answer.id %>" method="post">
+        <input type="hidden" name="_method" value="put">
+        <input type="submit" value="Best Punchline">
+      </form>
+  <% end %>
+        <div id="click-to-comment-post">
+          <form>
+            <a href="#">Add a Comment</a>
+            <input id="button">
+          </form>
+        </div>
+
+        <div class="comment-on-answer">
+          <label>Comment:</label>
+          <form action="/answers/<%= answer.id %>/comments" method="POST">
+            <textarea name="description_text"></textarea>
+            <input type="submit" value="submit" >
+          </form>
+        </div>
+        <div class="answer-comments" >
+          <% if answer.comments.length > 0 %>
+            <ul>
+            <% answer.comments.each do |comment| %>
+              <li><%= comment.description_text %></li>
+            <% end %>
+            </ul>
           </ul>
         <% end %>
       </div>
