@@ -1,6 +1,6 @@
 
     <% if joke.best_answer_id == answer.id %>
-          <br><br><i aria-hidden="true" value="&#128514"></i> <span id="bestanswer">Best Punchline!</span>
+          <br><br><i aria-hidden="true" value="&#128514"></i> <span id="bestanswer">&#x1f602;</span>
       <% end %>
       <li>
       <div>
@@ -19,7 +19,7 @@
   <% if poster? %>
       <form action="/answers/<%= answer.id %>" method="post">
         <input type="hidden" name="_method" value="put">
-        <input type="submit" value="Best Punchline?">
+        <input type="submit" value="Best Punchline">
       </form>
   <% end %>
         <div id="click-to-comment-answer">
