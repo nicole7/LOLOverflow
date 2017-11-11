@@ -4,32 +4,26 @@ get '/jokes/:id/votes' do
   if logged_in?
     if params[:route] == "new"
       @vote = Vote.find_by(votable_type: "joke", votable_id: params[:id], user_id: current_user.id)
-      if @vote
-        redirect "/jokes/#{@joke.id}"
-      else
+      if @vote == nil
         @vote = Vote.create(votable_type: "joke", votable_id: params[:id], user_id: current_user.id)
         @joke.vote_tally += 1
         @joke.save
         content_type :json
         {tally: @joke.vote_tally }.to_json
-        # redirect "/jokes/#{@joke.id}"
       end
     elsif params[:route] == "delete"
-
       @vote = Vote.find_by(votable_type: "joke", votable_id: params[:id], user_id: current_user.id)
-      if @vote
-        p "*****************"
+      if @vote != nil
         @vote.destroy
         @joke.vote_tally -= 1
         @joke.save
         content_type :json
         {tally: @joke.vote_tally}.to_json
       end
-      # redirect "/jokes/#{@joke.id}"
     end
   else
-    @errors = ["You must be logged in."]
-    erb :'/sessions/new'
+    content_type :json
+    {login: "logged-out", message: "You must be logged in to vote."}.to_json     
   end
 
 end
@@ -42,26 +36,26 @@ get '/answers/:id/votes' do
   if logged_in?
     if params[:route] == "new"
       @vote = Vote.find_by(votable_type: "answer", votable_id: params[:id], user_id: current_user.id)
-      if @vote
-        redirect "/jokes/#{@joke.id}"
-      else
+      if @vote == nil
         @vote = Vote.create(votable_type: "answer", votable_id: params[:id], user_id: current_user.id)
         @answer.vote_tally += 1
         @answer.save
-        redirect "/jokes/#{@joke.id}"
+        content_type :json
+        {tally: @answer.vote_tally}.to_json
       end
     elsif params[:route] == "delete"
       @vote = Vote.find_by(votable_type: "answer", votable_id: params[:id], user_id: current_user.id)
-      if @vote
+      if @vote != nil
         @vote.destroy
         @answer.vote_tally -= 1
         @answer.save
+        content_type :json
+        {tally: @answer.vote_tally}.to_json
       end
-      redirect "/jokes/#{@joke.id}"
     end
   else
-    @errors = ["You must be logged in."]
-    erb :'/sessions/new'
+    content_type :json
+    {login: "logged-out", message: "You must be logged in to vote." }.to_json  
   end
 
 end

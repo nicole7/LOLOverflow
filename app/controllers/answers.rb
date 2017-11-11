@@ -9,11 +9,17 @@ end
 
 post '/jokes/:id/answers' do
   @joke = Joke.find(params[:id])
-  @answer = Answer.create(user_id: current_user.id, joke_id: @joke.id, description_text: params[:description_text], vote_tally: 0)
-  if request.xhr?
-    erb :'/jokes/_joke_show_answer', layout: false, locals: { joke: @joke, answer: @answer }
+  if logged_in?
+    @answer = Answer.create(user_id: current_user.id, joke_id: @joke.id, description_text: params[:description_text], vote_tally: 0)
+    if request.xhr?
+      erb :'/jokes/_joke_show_answer', layout: false, locals: { joke: @joke, answer: @answer }
+    else
+      redirect "/jokes/#{@joke.id}"
+    end
   else
-    redirect "/jokes/#{@joke.id}"
+    p "hello"
+    content_type :json
+    {login: "logged-out", message: "You must be logged in to post an answer."}.to_json  
   end
 end
 

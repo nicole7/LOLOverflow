@@ -5,11 +5,16 @@
 <li>
   <div class="answer-summary">
     <div class="votes-show joke-heading answer-votes-heading">
-      <a href="/answers/<%= answer.id %>/votes?route=new" ><center><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></center></a>
+      <div>
+        <a href="/answers/<%= answer.id %>/votes?route=new" ><i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i></a>
+        <br/>
+      </div>
+      <div title="votes" class="display-vote-tally"><%= answer.vote_tally %>
+      </div>
+      <div>
       <br/>
-      <div><span title="votes"><center><%= answer.vote_tally %></center></span></div>
-      <br/>
-      <a href="/answers/<%= answer.id %>/votes?route=delete" ><center><i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i></center></a>
+        <a href="/answers/<%= answer.id %>/votes?route=delete" ><i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i></a>
+      </div>
     </div>
 
     <div class="answer-heading">
@@ -17,17 +22,15 @@
     </div>
   </div>
 
-<% if poster? %>
-  <form action="/answers/<%= answer.id %>" method="post">
-    <input type="hidden" name="_method" value="put">
-    <input type="submit" value="Best Punchline">
-  </form>
-<% end %>
-  <div class="click-to-comment-answer">
-    <form>
-      <a href="#">Add a Comment</a>
-      <input id="button">
+  <% if poster? %>
+    <form action="/answers/<%= answer.id %>" method="post">
+      <input type="hidden" name="_method" value="put">
+      <input type="submit" value="Best Punchline">
     </form>
+  <% end %>
+
+  <div class="click-to-comment-answer">
+      <a href="#" class="add-comment-link">Add a Comment</a>
   </div>
 
   <div class="comment-on-answer">
